@@ -43,3 +43,8 @@ STATIC_URL = '/static/'
 ROOT_URLCONF = 'regex_editor_project.urls'
 
 SECRET_KEY = 'django-insecure-!replace-this-with-a-strong-key-1234567890'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+

@@ -8,8 +8,11 @@ def read_uploaded_file(file_obj):
     """
     filename = file_obj.name.lower()
     if filename.endswith('.csv'):
-        return pd.read_csv(file_obj)
+        df = pd.read_csv(file_obj)
     elif filename.endswith('.xlsx') or filename.endswith('.xls'):
-        return pd.read_excel(file_obj)
+        df = pd.read_excel(file_obj)
     else:
         raise ValueError("Unsupported file format. Please upload a CSV or Excel file.")
+    
+    df.columns = df.columns.str.strip()
+    return df

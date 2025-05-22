@@ -25,5 +25,11 @@
             {{ table_html|safe }}
         </div>
     {% endif %}
+
+    {% if download_link %}
+    <a href="{{ download_link }}" class="btn btn-success mt-3" download>
+        📥 Download Processed File
+    </a>
+    {% endif %}
 </body>
 </html>
